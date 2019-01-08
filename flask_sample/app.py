@@ -2,6 +2,7 @@
 from flask import Flask
 
 from flask_sample.database import init_db
+import flask_sample.models
 
 
 def create_app():
