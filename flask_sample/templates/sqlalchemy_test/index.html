@@ -9,3 +9,20 @@
 	article: <textarea rows="4" type="text" name="article"></textarea><br>
 	<input type="submit" value="ADD POST">
 </form>
+
+<form action="users_by_id" method="POST">
+	ids (sqparete by ','): <input type="text" name="ids"><br>
+	<input type="submit" value="GET USERS">
+</form>
+
+<form action="updated_record" method="POST">
+	id: <input type="text" name="id"><br>
+	name: <input type="text" name="name"><br>
+	age: <input type="text" name="age"><br>
+	<input type="submit" value="UPDATE RECORD">
+</form>
+
+<form action="deleted_record" method="POST">
+	id: <input type="text" name="id"><br>
+	<input type="submit" value="DELETE RECORD">
+</form>
