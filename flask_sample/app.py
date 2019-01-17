@@ -7,6 +7,7 @@ import flask_sample.models
 from flask_sample.auth_page import auth_page
 from flask_sample.user_page import user_page
 from flask_sample.post_test_page import post_test_page
+from flask_sample.hello import hello
 
 
 def create_app():
@@ -15,6 +16,7 @@ def create_app():
 
     init_db(app)
 
+    app.register_blueprint(hello)
     app.register_blueprint(auth_page)
     app.register_blueprint(user_page)
     app.register_blueprint(post_test_page)
