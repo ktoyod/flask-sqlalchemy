@@ -2,12 +2,12 @@
 from flask import Flask
 
 from flask_sample.database import init_db
-import flask_sample.models
 
 from flask_sample.auth_page import auth_page
 from flask_sample.user_page import user_page
 from flask_sample.post_test_page import post_test_page
 from flask_sample.hello import hello
+from flask_sample.sqlalchemy_test import sqlalchemy_test
 
 
 def create_app():
@@ -20,6 +20,7 @@ def create_app():
     app.register_blueprint(auth_page)
     app.register_blueprint(user_page)
     app.register_blueprint(post_test_page)
+    app.register_blueprint(sqlalchemy_test)
 
     return app
 

@@ -1,4 +1,5 @@
-from .models import User, Post
+from .user import User
+from .post import Post
 
 
 __all__ = [
