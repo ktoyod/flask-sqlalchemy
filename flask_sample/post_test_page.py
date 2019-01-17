@@ -1,3 +1,4 @@
+import json
 from flask import Blueprint, render_template, request
 
 post_test_page = Blueprint('post_test_page',
@@ -17,3 +18,11 @@ def post_test():
     age = request.form['age']
 
     return render_template('post_test/post_test.html', name=name, age=age)
+
+
+@post_test_page.route('/post_test.json', methods=['POST'])
+def post_json():
+    name = request.form['name']
+    age = request.form['age']
+
+    return json.dumps({'success': True, 'name': name, 'age': age})
