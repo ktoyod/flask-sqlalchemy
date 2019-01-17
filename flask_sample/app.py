@@ -4,12 +4,16 @@ from flask import Flask
 from flask_sample.database import init_db
 import flask_sample.models
 
+from flask_sample.auth_page import auth_page
+
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object('flask_sample.config.Config')
 
     init_db(app)
+
+    app.register_blueprint(auth_page)
 
     return app
 
