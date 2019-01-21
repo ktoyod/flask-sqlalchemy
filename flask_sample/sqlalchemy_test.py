@@ -4,6 +4,7 @@ from flask import Blueprint, render_template, request
 
 from flask_sample import models
 from flask_sample.database import db
+from flask_sample.utils import json_serial
 
 sqlalchemy_test = Blueprint('sqlalchemy_test',
                             __name__,
@@ -152,9 +153,3 @@ def get_user_in_time(minutes):
                               'updated_at': user.updated_at
                               }
     return json.dumps(user_dict, default=json_serial)
-
-
-def json_serial(obj):
-    if isinstance(obj, (datetime.datetime)):
-        return obj.isoformat()
-    raise TypeError('Type $s not serializable' % type(obj))

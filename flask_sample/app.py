@@ -8,6 +8,7 @@ from flask_sample.user_page import user_page
 from flask_sample.post_test_page import post_test_page
 from flask_sample.hello import hello
 from flask_sample.sqlalchemy_test import sqlalchemy_test
+from flask_sample.celery_sample_page import celery_sample_page
 
 
 def create_app():
@@ -21,6 +22,7 @@ def create_app():
     app.register_blueprint(user_page)
     app.register_blueprint(post_test_page)
     app.register_blueprint(sqlalchemy_test)
+    app.register_blueprint(celery_sample_page)
 
     return app
 
