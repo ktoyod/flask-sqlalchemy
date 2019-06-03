@@ -133,6 +133,8 @@ def get_all_users():
     for user in users:
         users_dict[user.id] = {'name': user.name,
                                'age': user.age,
+                               'email': user.email,
+                               'password': user.password,
                                'created_at': user.created_at,
                                'updated_at': user.updated_at
                                }

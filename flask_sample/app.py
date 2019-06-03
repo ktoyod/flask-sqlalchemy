@@ -2,6 +2,7 @@
 from flask import Flask
 
 from flask_sample.database import init_db
+from flask_sample.login import init_login
 
 from flask_sample.auth_page import auth_page
 from flask_sample.user_page import user_page
@@ -13,9 +14,11 @@ from flask_sample.celery_sample_page import celery_sample_page
 
 def create_app():
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'kohei toyoda dayo'
     app.config.from_object('flask_sample.config.Config')
 
     init_db(app)
+    init_login(app)
 
     app.register_blueprint(hello)
     app.register_blueprint(auth_page)

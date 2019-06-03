@@ -1,1 +1,14 @@
-let's login
+<ul class="nav navbar-nav navbar-right">
+  {% if current_user.is_authenticated %}
+  <li><a href="{{ url_for('auth_page.logout') }}">Sign Out</a></li>
+  {% else %}
+  <form action="/auth/login" method="POST">
+    <p><input type="text" name="Username"></p>
+    <p><input type="password" name="Password"></p>
+	<p><input type="hidden" name="user_id" value="8"></p>
+    <p><input type="submit" value="submit"></p>
+  </form>
+  {{ message }}
+  <li><a href="{{ url_for('auth_page.login') }}">Sign In</a></li>
+  {% endif %}
+</ul>
